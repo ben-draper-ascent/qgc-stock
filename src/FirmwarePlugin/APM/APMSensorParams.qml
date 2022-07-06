@@ -17,13 +17,20 @@ Item {
 
     property Fact _noFact: Fact { }
 
-    property bool compassPrimaryFactAvailable:      factPanelController.parameterExists(-1, "COMPASS_PRIMARY")
-    property Fact compassPrimaryFact:               compassPrimaryFactAvailable ? factPanelController.getParameterFact(-1, "COMPASS_PRIMARY") : _noFact
-    property bool compass1Primary:                  compassPrimaryFactAvailable ? compassPrimaryFact.rawValue == 0 : false
-    property bool compass2Primary:                  compassPrimaryFactAvailable ? compassPrimaryFact.rawValue == 1 : false
-    property bool compass3Primary:                  compassPrimaryFactAvailable ? compassPrimaryFact.rawValue == 2 : false
-    property var  rgCompassPrimary:                 [ compass1Primary, compass2Primary, compass3Primary ]
+    // property bool compassPrimaryFactAvailable:      factPanelController.parameterExists(-1, "COMPASS_PRIMARY")
+    // property Fact compassPrimaryFact:               compassPrimaryFactAvailable ? factPanelController.getParameterFact(-1, "COMPASS_PRIMARY") : _noFact
+    // property bool compass1Primary:                  compassPrimaryFactAvailable ? compassPrimaryFact.rawValue == 0 : false
+    // property bool compass2Primary:                  compassPrimaryFactAvailable ? compassPrimaryFact.rawValue == 1 : false
+    // property bool compass3Primary:                  compassPrimaryFactAvailable ? compassPrimaryFact.rawValue == 2 : false
+    // property var  rgCompassPrimary:                 [ compass1Primary, compass2Primary, compass3Primary ]
+    property bool oldCompassConfig: factPanelController.parameterExists(-1, "COMPASS_PRIMARY")
 
+    property Fact compassPrimaryFact:  oldCompassConfig ? factPanelController.getParameterFact(-1, "COMPASS_PRIMARY") : factPanelController.getParameterFact(-1, "COMPASS_PRIO1_ID")
+    property bool compass1Primary:  oldCompassConfig ? compassPrimaryFact.rawValue == 0 : compassPrimaryFact.rawValue == compass1Id.rawValue
+    property bool compass2Primary:  oldCompassConfig ? compassPrimaryFact.rawValue == 1 : compassPrimaryFact.rawValue == compass2Id.rawValue
+    property bool compass3Primary:  oldCompassConfig ? compassPrimaryFact.rawValue == 2 : compassPrimaryFact.rawValue == compass3Id.rawValue
+    property var  rgCompassPrimary:                 [ compass1Primary, compass2Primary, compass3Primary ]
+    
     property Fact compass1Id:                       factPanelController.getParameterFact(-1, "COMPASS_DEV_ID")
     property Fact compass2Id:                       factPanelController.getParameterFact(-1, "COMPASS_DEV_ID2")
     property Fact compass3Id:                       factPanelController.getParameterFact(-1, "COMPASS_DEV_ID3")

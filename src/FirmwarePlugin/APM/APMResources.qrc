@@ -19,6 +19,8 @@
         <file alias="QGroundControl/Controls/APMSubMotorDisplay.qml">../../QmlControls/APMSubMotorDisplay.qml</file>
         <file alias="APMNotSupported.qml">../../AutoPilotPlugins/APM/APMNotSupported.qml</file>
         <file alias="APMPowerComponent.qml">../../AutoPilotPlugins/APM/APMPowerComponent.qml</file>
+        <file alias="APMSpiritComponent.qml">../../../custom/src/AutoPilotPlugin/APMSpiritComponent.qml</file>
+        <file alias="APMSpiritComponentSummary.qml">../../../custom/src/AutoPilotPlugin/APMSpiritComponentSummary.qml</file>
         <file alias="APMPowerComponentSummary.qml">../../AutoPilotPlugins/APM/APMPowerComponentSummary.qml</file>
         <file alias="APMRadioComponentSummary.qml">../../AutoPilotPlugins/APM/APMRadioComponentSummary.qml</file>
         <file alias="APMSafetyComponent.qml">../../AutoPilotPlugins/APM/APMSafetyComponent.qml</file>

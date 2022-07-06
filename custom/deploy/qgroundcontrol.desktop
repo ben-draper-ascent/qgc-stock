@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=Ascent Aerosystems Ground Control
+GenericName=Ground Control Station
+Comment=UAS ground control station
+Icon=AscentLogo
+Exec=qgroundcontrol-start.sh
+Terminal=false
+Categories=Utility;

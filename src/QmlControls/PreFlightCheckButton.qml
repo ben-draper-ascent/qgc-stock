@@ -34,6 +34,8 @@ QGCButton {
     property bool   passed:                         _manualState === _statePassed && _telemetryState === _statePassed
     property bool   failed:                         _manualState === _stateFailed || _telemetryState === _stateFailed
 
+    property bool keepTextOnPass: false
+
     property int _manualState:          manualText === "" ? _statePassed : _statePending
     property int _telemetryState:       _statePassed
     property int _horizontalPadding:    ScreenTools.defaultFontPixelWidth
@@ -51,7 +53,7 @@ QGCButton {
     property string _text: "<b>" + name +"</b>: " +
                            ((_telemetryState !== _statePassed) ?
                                telemetryTextFailure :
-                               (_manualState !== _statePassed ? manualText : qsTr("Passed")))
+                               ( (_manualState !== _statePassed) ? manualText : (keepTextOnPass? manualText : qsTr("Passed"))))
     property color  _color: _telemetryState === _statePassed && _manualState === _statePassed ?
                                 _passedColor :
                                 (_telemetryState == _stateFailed ?
