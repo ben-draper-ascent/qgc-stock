@@ -21,6 +21,9 @@ class APMTuningComponent;
 class APMSafetyComponent;
 class APMSensorsComponent;
 class APMPowerComponent;
+
+class APMSpiritComponent;
+
 class APMMotorComponent;
 class APMCameraComponent;
 class APMLightsComponent;
@@ -57,15 +60,17 @@ protected:
     APMTuningComponent*         _tuningComponent;
     ESP8266Component*           _esp8266Component;
     APMHeliComponent*           _heliComponent;
+    
+    APMSpiritComponent*         _spiritComponent;
 #if 0
     // Follow me not ready for Stable
     APMFollowComponent*         _followComponent;
 #endif
 
-#if !defined(NO_SERIAL_LINK) && !defined(__android__)
-private slots:
-    void _checkForBadCubeBlack(void);
-#endif
+// #if !defined(NO_SERIAL_LINK) && !defined(__android__)
+// private slots:
+//     void _checkForBadCubeBlack(void);
+// #endif
 
 private:
     QVariantList                _components;

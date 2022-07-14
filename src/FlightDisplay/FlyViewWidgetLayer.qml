@@ -243,7 +243,8 @@ Item {
         maxHeight:              parent.height - y - parentToolInsets.bottomEdgeLeftInset - _toolsMargin
         visible:                !QGroundControl.videoManager.fullScreen
 
-        onDisplayPreFlightChecklist: preFlightChecklistPopup.createObject(mainWindow).open()
+        onDisplayPreFlightChecklist: mainWindow.displayChecklist()
+        //onDisplayPreFlightChecklist: preFlightChecklistPopup == nullptr ? preFlightChecklistPopup.createObject(mainWindow).open() : preFlightChecklistPopup.open()
 
         property real leftInset: x + width
     }

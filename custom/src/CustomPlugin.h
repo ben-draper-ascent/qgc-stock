@@ -61,7 +61,6 @@ public:
     QString                 brandImageIndoor                (void) const final;
     QString                 brandImageOutdoor               (void) const final;
     bool                    overrideSettingsGroupVisibility (QString name) final;
-    bool                    adjustSettingMetaData           (const QString& settingsGroup, FactMetaData& metaData) final;
     void                    paletteOverride                 (QString colorName, QGCPalette::PaletteColorInfo_t& colorInfo) final;
     QQmlApplicationEngine*  createQmlApplicationEngine      (QObject* parent) final;
 

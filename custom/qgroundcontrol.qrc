@@ -69,7 +69,6 @@
 		<file alias="PlanToolBar.qml">../src/PlanView/PlanToolBar.qml</file>
 		<file alias="PlanToolBarIndicators.qml">../src/PlanView/PlanToolBarIndicators.qml</file>
 		<file alias="PlanView.qml">../src/PlanView/PlanView.qml</file>
-		<file alias="PreFlightCheckList.qml">../src/FlightDisplay/PreFlightCheckList.qml</file>
 		<file alias="PX4FlowSensor.qml">../src/VehicleSetup/PX4FlowSensor.qml</file>
 		<file alias="QGCInstrumentWidget.qml">../src/FlightMap/Widgets/QGCInstrumentWidget.qml</file>
 		<file alias="QGCInstrumentWidgetAlternate.qml">../src/FlightMap/Widgets/QGCInstrumentWidgetAlternate.qml</file>
@@ -104,7 +103,6 @@
 		<file alias="QGroundControl/Controls/KMLOrSHPFileDialog.qml">../src/QmlControls/KMLOrSHPFileDialog.qml</file>
 		<file alias="QGroundControl/Controls/LogReplayStatusBar.qml">../src/QmlControls/LogReplayStatusBar.qml</file>
 		<file alias="QGroundControl/Controls/MainStatusIndicator.qml">../src/ui/toolbar/MainStatusIndicator.qml</file>
-		<file alias="QGroundControl/Controls/MainToolBar.qml">../src/ui/toolbar/MainToolBar.qml</file>
 		<file alias="QGroundControl/Controls/MainWindowSavedState.qml">../src/QmlControls/MainWindowSavedState.qml</file>
 		<file alias="QGroundControl/Controls/MAVLinkChart.qml">../src/QmlControls/MAVLinkChart.qml</file>
 		<file alias="QGroundControl/Controls/MAVLinkMessageButton.qml">../src/QmlControls/MAVLinkMessageButton.qml</file>

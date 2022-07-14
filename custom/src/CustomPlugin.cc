@@ -151,25 +151,6 @@ bool CustomPlugin::overrideSettingsGroupVisibility(QString name)
     return true;
 }
 
-// This allows you to override/hide QGC Application settings
-bool CustomPlugin::adjustSettingMetaData(const QString& settingsGroup, FactMetaData& metaData)
-{
-    bool parentResult = QGCCorePlugin::adjustSettingMetaData(settingsGroup, metaData);
-
-    if (settingsGroup == AppSettings::settingsGroup) {
-        // This tells QGC than when you are creating Plans while not connected to a vehicle
-        // the specific firmware/vehicle the plan is for.
-        if (metaData.name() == AppSettings::offlineEditingFirmwareClassName) {
-            metaData.setRawDefaultValue(QGCMAVLink::FirmwareClassPX4);
-            return false;
-        } else if (metaData.name() == AppSettings::offlineEditingVehicleClassName) {
-            metaData.setRawDefaultValue(QGCMAVLink::VehicleClassMultiRotor);
-            return false;
-        }
-    }
-
-    return parentResult;
-}
 
 // This modifies QGC colors palette to match possible custom corporate branding
 void CustomPlugin::paletteOverride(QString colorName, QGCPalette::PaletteColorInfo_t& colorInfo)
@@ -349,10 +330,10 @@ void CustomPlugin::paletteOverride(QString colorName, QGCPalette::PaletteColorIn
         colorInfo[QGCPalette::Light][QGCPalette::ColorGroupDisabled] = QColor("#000000");
     }
     else if (colorName == QStringLiteral("brandingPurple")) {
-        colorInfo[QGCPalette::Dark][QGCPalette::ColorGroupEnabled]   = QColor("#305671"); //Ascent Blue
-        colorInfo[QGCPalette::Dark][QGCPalette::ColorGroupDisabled]  = QColor("#305671"); //Ascent Blue
-        colorInfo[QGCPalette::Light][QGCPalette::ColorGroupEnabled]  = QColor("#305671"); //Ascent Blue
-        colorInfo[QGCPalette::Light][QGCPalette::ColorGroupDisabled] = QColor("#305671"); //Ascent Blue
+        colorInfo[QGCPalette::Dark][QGCPalette::ColorGroupEnabled]   = QColor("#262E41"); //Midnight Blue
+        colorInfo[QGCPalette::Dark][QGCPalette::ColorGroupDisabled]  = QColor("#262E41"); //Midnight Blue
+        colorInfo[QGCPalette::Light][QGCPalette::ColorGroupEnabled]  = QColor("#262E41"); //Midnight Blue
+        colorInfo[QGCPalette::Light][QGCPalette::ColorGroupDisabled] = QColor("#262E41"); //Midnight Blue
     }
     else if (colorName == QStringLiteral("brandingBlue")) {
         colorInfo[QGCPalette::Dark][QGCPalette::ColorGroupEnabled]   = QColor("#305671"); //Ascent Blue

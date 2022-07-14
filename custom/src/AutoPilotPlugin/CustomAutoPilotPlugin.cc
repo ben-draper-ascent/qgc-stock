@@ -54,50 +54,47 @@ void CustomAutoPilotPlugin::_advancedChanged(bool)
 }
 
 // This allows us to hide most Vehicle Setup pages unless we are in Advanced Mmode
-const QVariantList& CustomAutoPilotPlugin::vehicleComponents()
-{
-    if (_components.count() == 0 && !_incorrectParameterVersion) {
-        if (_vehicle->parameterManager()->parametersReady()) {
-                
-            _spiritComponent = new APMSpiritComponent(_vehicle, this);
-            _spiritComponent->setupTriggerSignals();
-            _components.append(QVariant::fromValue((VehicleComponent*)_spiritComponent));
+// const QVariantList& CustomAutoPilotPlugin::vehicleComponents(void)
+// {
+//     if (_components.count() == 0 && !_incorrectParameterVersion) {
+//         if (_vehicle->parameterManager()->parametersReady()) {
+//             _spiritComponent = new APMSpiritComponent(_vehicle, this);
+//             _spiritComponent->setupTriggerSignals();
+//             _components.append(QVariant::fromValue((VehicleComponent*)_spiritComponent));
 
-            _safetyComponent = new APMSafetyComponent(_vehicle, this);
-            _safetyComponent->setupTriggerSignals();
-            _components.append(QVariant::fromValue(reinterpret_cast<VehicleComponent*>(_safetyComponent)));
+//             _safetyComponent = new APMSafetyComponent(_vehicle, this);
+//             _safetyComponent->setupTriggerSignals();
+//             _components.append(QVariant::fromValue((VehicleComponent*)_safetyComponent));
 
-            _sensorsComponent = new APMSensorsComponent(_vehicle, this);
-            _sensorsComponent->setupTriggerSignals();
-            _components.append(QVariant::fromValue((VehicleComponent*)_sensorsComponent));
-            
-        } 
-        else {
-            qWarning() << "Call to vehicleCompenents prior to parametersReady";
-        }
-    }
-
-    return _components;
-}
+//             _sensorsComponent = new APMSensorsComponent(_vehicle, this);
+//             _sensorsComponent->setupTriggerSignals();
+//             _components.append(QVariant::fromValue((VehicleComponent*)_sensorsComponent));
+//         }
+//         else {
+//             qWarning() << "Call to vehicleCompenents prior to parametersReady";
+//         }
+//     }
+//     return _components;
+// }
 
 
-QString CustomAutoPilotPlugin::prerequisiteSetup(VehicleComponent* component) const
-{
-    bool requiresAirframeCheck = false;
+// QString CustomAutoPilotPlugin::prerequisiteSetup(VehicleComponent* component) const
+// {
+//     bool requiresAirframeCheck = false;
 
-    if (qobject_cast<const APMSpiritComponent*>(component)) {
-        requiresAirframeCheck = true;
-    } else if (qobject_cast<const APMSafetyComponent*>(component)) {
-        requiresAirframeCheck = true;
-    } else if (qobject_cast<const APMSensorsComponent*>(component)) {
-        requiresAirframeCheck = true;
-    }
+//     if (qobject_cast<const APMSpiritComponent*>(component)) {
+//         requiresAirframeCheck = true;
+//     } else if (qobject_cast<const APMSafetyComponent*>(component)) {
+//         requiresAirframeCheck = true;
+//     } else if (qobject_cast<const APMSensorsComponent*>(component)) {
+//         requiresAirframeCheck = true;
+//     }
 
-    if (requiresAirframeCheck) {
-        if (_airframeComponent && !_airframeComponent->setupComplete()) {
-            return _airframeComponent->name();
-        }
-    }
+//     if (requiresAirframeCheck) {
+//         if (_airframeComponent && !_airframeComponent->setupComplete()) {
+//             return _airframeComponent->name();
+//         }
+//     }
 
-    return QString();
-}
+//     return QString();
+// }

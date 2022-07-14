@@ -10,5 +10,6 @@
         <file alias="SetupView.qml">src/VehicleSetup/SetupView.qml</file>
         <file alias="ArmedIndicator.qml">src/ui/toolbar/ArmedIndicator.qml</file>
 	<file alias="BatteryIndicator.qml">src/ui/toolbar/BatteryIndicator.qml</file>
-
+        <file alias="QGroundControl/Controls/MainToolBar.qml">src/ui/toolbar/MainToolBar.qml</file>
+        <file alias="PreFlightCheckList.qml">src/FlightDisplay/PreFlightCheckList.qml</file>
 

@@ -15,7 +15,7 @@
 #include "APMAutoPilotPlugin.h"
 #include "Vehicle.h"
 
-class APMSpiritComponent;
+//class APMSpiritComponent;
 
 class CustomAutoPilotPlugin : public APMAutoPilotPlugin
 {
@@ -23,11 +23,12 @@ class CustomAutoPilotPlugin : public APMAutoPilotPlugin
 public:
     CustomAutoPilotPlugin(Vehicle* vehicle, QObject* parent);
 
-    const QVariantList& vehicleComponents() final;
-    QString prerequisiteSetup(VehicleComponent* component) const final;
+    //const QVariantList& vehicleComponents() final;
 
-protected:
-APMSpiritComponent* _spiritComponent;
+    //QString prerequisiteSetup(VehicleComponent* component) const final;
+
+// protected:
+//     APMSpiritComponent* _spiritComponent;
 
 private slots:
     void         _advancedChanged        (bool advanced);

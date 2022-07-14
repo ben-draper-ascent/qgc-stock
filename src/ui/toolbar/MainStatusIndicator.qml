@@ -15,6 +15,7 @@ import QGroundControl.Controls              1.0
 import QGroundControl.MultiVehicleManager   1.0
 import QGroundControl.ScreenTools           1.0
 import QGroundControl.Palette               1.0
+import QGroundControl.Vehicle               1.0
 
 RowLayout {
     id:         _root
@@ -172,8 +173,9 @@ RowLayout {
                         Layout.alignment:   Qt.AlignHCenter
                         text:               _armed ?  qsTr("Disarm") : (forceArm ? qsTr("Force Arm") : qsTr("Arm"))
 
+                        property bool _checklistCleared: _activeVehicle ? ( (_activeVehicle.checkListState === Vehicle.CheckListPassed) ? true : false) : false
                         property bool forceArm: false
-
+                        enabled: _armed || _checklistCleared
                         onPressAndHold: forceArm = true
 
                         onClicked: {

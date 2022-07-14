@@ -42,12 +42,14 @@
     <qresource prefix="/qml">
         <file alias="QGroundControl/FlightDisplay/FlyViewCustomLayer.qml">res/CustomFlyViewOverlay.qml</file>
         <file alias="MainRootWindow.qml">res/CustomRootWindow.qml</file>
-        <file alias="QGroundControl/FlightDisplay/FlyViewPreFlightChecklistPopup.qml">res/CustomChecklist.qml</file>
+        <file alias="QGroundControl/FlightDisplay/FlyViewPreFlightChecklistPopup.qml">res/CustomChecklistPopup.qml</file>
         <file alias="QGroundControl/FlightDisplay/GuidedActionTakeoff.qml">res/CustomGuidedActionTakeoff.qml</file>
         <file alias="QGroundControl/FlightDisplay/GuidedActionsController.qml">res/CustomGuidedActionsController.qml</file>
         <file alias="QGroundControl/FlightDisplay/PreFlightSensorsHealthCheck.qml">res/CustomPreFlightSensorsHealthCheck.qml</file>
         <file alias="QGroundControl/FlightDisplay/PreFlightRCCheck.qml">res/CustomPreFlightRCCheck.qml</file>
         <file alias="QGroundControl/FlightDisplay/PreFlightBatteryCheck.qml">res/CustomPreFlightBatteryCheck.qml</file>
         <file alias="SetupView.qml">res/CustomSetupView.qml</file>
+        <file alias="QGroundControl/Controls/MainToolBar.qml">res/CustomToolBar.qml</file>
+        <file alias="PreFlightCheckList.qml">res/CustomPreFlightCheckList.qml</file>
     </qresource>
 </RCC>

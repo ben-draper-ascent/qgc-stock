@@ -13,8 +13,8 @@ SOURCES
     APMNotSupported.qml
     APMPowerComponent.qml
     APMPowerComponentSummary.qml
-    APMSpiritComponent.qml
-    APMSpiritComponentSummary.qml
+    ../../../custom/src/AutoPilotPlugin/APMSpiritComponent.qml
+    ../../../custom/src/AutoPilotPlugin/APMSpiritComponentSummary.qml
     APMRadioComponentSummary.qml
     APMSafetyComponent.qml
     APMSafetyComponentCopter.qml

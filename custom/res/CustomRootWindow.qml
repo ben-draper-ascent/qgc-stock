@@ -38,6 +38,8 @@ ApplicationWindow {
         }
 
         // Start the sequence of first run prompt(s)
+        console.log("FIRST RUN PROMPT SEQUENCE BEGIN")
+        preFlightChecklistPopup.createObject(mainWindow)
         firstRunPromptManager.nextPrompt()
     }
 
@@ -62,9 +64,16 @@ ApplicationWindow {
                 currentDialog.open()
                 nextPromptIdIndex++
             } else {
+                console.log("Main Window: Show PreFlight Checklist if Needed")
                 currentDialog = null
                 showPreFlightChecklistIfNeeded()
             }
+        }
+    }
+
+    Component {
+        id: preFlightChecklistPopup
+        FlyViewPreFlightChecklistPopup {
         }
     }
 
@@ -100,6 +109,7 @@ ApplicationWindow {
     signal vtolTransitionToFwdFlightRequest
     signal vtolTransitionToMRFlightRequest
     signal showPreFlightChecklistIfNeeded
+    signal displayPreFlightChecklist
 
     //-------------------------------------------------------------------------
     //-- Global Scope Functions
@@ -132,11 +142,21 @@ ApplicationWindow {
     }
 
     function showFlyView() {
+        console.log("MainWindow: Show Fly View")
         if (!flightView.visible) {
+            console.log("MainWindow: Show Pre Flight Checklist")
             mainWindow.showPreFlightChecklistIfNeeded()
         }
         viewSwitch(toolbar.flyViewToolbar)
         flightView.visible = true
+    }
+
+    function displayChecklist(){
+        console.log("MainWindow: DISPLAY CHECKLIST")
+        if (flightView.visible) {
+            console.log("MainWindow: Trigger display checklist signal")
+            mainWindow.displayPreFlightChecklist()
+        }
     }
 
     function showPlanView() {
